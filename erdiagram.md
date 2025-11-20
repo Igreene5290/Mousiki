@@ -1,3 +1,4 @@
+```mermaid
 erDiagram
 
     USER ||--|| USER_PROFILE : "has"
