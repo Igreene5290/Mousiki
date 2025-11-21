@@ -1,3 +1,7 @@
+-- Create and use the Mousiki database
+CREATE DATABASE IF NOT EXISTS mousiki;
+USE mousiki;
+
 -- User/Auth Tables
 
 CREATE TABLE user (
@@ -28,12 +32,12 @@ CREATE TABLE session (
 
 CREATE TABLE artist (
     artist_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
+    name VARCHAR(1000) NOT NULL
 );
 
 CREATE TABLE album (
     album_id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
+    title VARCHAR(1000) NOT NULL,
     artist_id INT,
     release_year INT,
     FOREIGN KEY (artist_id) REFERENCES artist(artist_id)
@@ -46,7 +50,7 @@ CREATE TABLE genre (
 
 CREATE TABLE track (
     track_id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
+    title VARCHAR(1000) NOT NULL,
     artist_id INT,
     album_id INT,
     popularity INT DEFAULT 0,
